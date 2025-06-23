@@ -14,10 +14,14 @@
           system = "x86_64-linux";
         };
 
-        username = "mw";
-        homeDirectory = "/home/mw";
+        # This is the important fix — everything goes in configuration
+        configuration = {
+          home.username = "mw";
+          home.homeDirectory = "/home/mw";
 
-        configuration = import ./home/default.nix;
+          # Include your actual config from a separate file (optional)
+          imports = [ ./home/default.nix ];
+        };
       };
     };
   };
