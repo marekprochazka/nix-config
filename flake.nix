@@ -9,7 +9,7 @@
 
   outputs = { self, nixpkgs, home-manager, ... }: {
     homeConfigurations = {
-      myuser = home-manager.lib.homeManagerConfiguration {
+      mw = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
           system = "x86_64-linux";
         };
